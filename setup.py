@@ -1,20 +1,19 @@
 import os
 from setuptools import setup
-
-README = open(os.path.join(os.path.dirname(__file__), 'README.dm')).read()
+README = open(os.path.join(os.path.dirname(__file__), 'README.md')).read()
 
 # allow setup.py to be run from any path
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
-    name='django-log_register',
+    name='django-log-register',
     version='0.1',
     packages=['log-register'],
     include_package_data=True,
     license='BSD License',
-    description='A simple Django app to register log ans save them.',
+    description='A simple Django app to register log and save them.',
     long_description=README,
-    url='https://github.com/lalo73/register-log',
+    url='https://github.com/lalo73/django-log-register',
     author='Leandro Gomez',
     author_email='leandro.gz73@gmail.comm',
     classifiers=[
