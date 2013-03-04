@@ -15,7 +15,7 @@ setup(
     long_description=README,
     url='https://github.com/lalo73/django-log-register',
     author='Leandro Gomez',
-    author_email='leandro.gz73@gmail.comm',
+    author_email='leandro.gz73@gmail.com',
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
