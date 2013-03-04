@@ -1,4 +1,4 @@
-register-log
-============
+django-log-register
+===================
 
-Register log for django in any place of you project!
+A simple Django app to register log ans save them.
