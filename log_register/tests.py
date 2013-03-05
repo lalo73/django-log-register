@@ -7,6 +7,7 @@ Replace this with more appropriate tests for your application.
 
 from django.test import TestCase
 from log_register.models import Lot
+from log_register.settings import INFO, SUCCESS
 
 
 class LogRegisterTest(TestCase):
@@ -48,3 +49,12 @@ class LogRegisterTest(TestCase):
     def test_when_call_close_method_then_the_register_end_is_set(self):
         self.lot_default.close()
         self.assertIsNotNone(self.lot_default.register_end)
+
+    def test_when_call_success_method_then_a_log_with_level_success_is_created(self):
+        self.assertEqual(self.lot_default.success_count(), 0)
+        success_logs = self.lot_default.logs.filter(level=SUCCESS)
+        self.assertEqual(len(success_logs), 0)
+        self.lot_default.success("testing", "extra_data_test")
+        self.assertEqual(self.lot_default.success_count(), 1)
+        success_logs = self.lot_default.logs.filter(level=SUCCESS)
+        self.assertEqual(len(success_logs), 1)
