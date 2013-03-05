@@ -16,7 +16,7 @@ def get_lot_for_objects(obj, force=False):
 
     try:
         lot = Lot.objects.get(content_type=content_type, object_id=object_id, single=True)
-    except Lot.MultipleObjectsReturned as e:
+    except Lot.objects.model.MultipleObjectsReturned as e:
         if force:
             lots = Lot.objects.filter(content_type=content_type, object_id=object_id, single=True)
             lots.delete()
