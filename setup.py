@@ -8,7 +8,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 setup(
     name='django-log-register',
     version='0.1.1',
-    packages=['log-register'],
+    packages=['log_register'],
     include_package_data=True,
     license='BSD License',
     description='A simple Django app to register log and save them.',
