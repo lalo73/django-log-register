@@ -58,3 +58,12 @@ class LogRegisterTest(TestCase):
         self.assertEqual(self.lot_default.success_count(), 1)
         success_logs = self.lot_default.logs.filter(level=SUCCESS)
         self.assertEqual(len(success_logs), 1)
+
+    def test_when_call_info_method_then_a_log_with_level_info_is_created(self):
+        self.assertEqual(self.lot_default.info_count(), 0)
+        info_logs = self.lot_default.logs.filter(level=INFO)
+        self.assertEqual(len(info_logs), 0)
+        self.lot_default.info("testing", "extra_data_test")
+        self.assertEqual(self.lot_default.info_count(), 1)
+        info_logs = self.lot_default.logs.filter(level=INFO)
+        self.assertEqual(len(info_logs), 1)
