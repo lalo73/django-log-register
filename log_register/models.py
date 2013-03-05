@@ -128,7 +128,7 @@ class Lot(models.Model):
         return log
 
     def __get_count(self, level):
-        count = self.logs.filter(lovel=level).count()
+        count = self.logs.filter(level=level).count()
         return count
 
 
