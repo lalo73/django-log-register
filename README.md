@@ -3,7 +3,7 @@ Log Register Documentation
 
 :Author:
     Leandro Gomez <leandro.gz73@gmail.com>
-:Version: 0.1.3
+:Version: 0.0.3
 
 ::
 
