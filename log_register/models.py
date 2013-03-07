@@ -121,7 +121,7 @@ class Lot(models.Model):
         Register a log.
         Only the param 'reason' it's required.
         """
-        log = Log(reason=reason, extra_data=extra_data, level=level)
+        log = Log(reason=reason, extra_data=extra_data, level=level, lot=self)
         if not log_object is None:
             log.log_object = log_object
         log.save()
@@ -139,11 +139,12 @@ class Log(models.Model):
 
     * The 'reason' field represents the answer for "Why this log happen?" (See the examples)
     * The 'extra_date' field represent the the answer for "What is the context of this log?",
-    "What details are useful?"
+    "What details are useful?", "What will help me to resolve this problem?"
     * The 'level' field represents the level of this log. By default, there are five, the same of django-messages
     framework. In the near future, you'll be able to customize them. Just wait :)
-    * The 'content_type', 'object_id' and 'log_object' represent the object inn the database that cause the error.
-    This is useful to find them and fix some warnings that don't are fatal errors. (See the examples)
+    * The 'content_type', 'object_id' and 'log_object' represent the object in the database that cause the error, by
+    example. Or the object that have been successfully created.
+    Or find an object and fix some warnings that don't are fatal errors. (See the examples)
 
     """
     LEVEL_CHOICES = (
