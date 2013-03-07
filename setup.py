@@ -7,7 +7,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-log-register',
-    version='0.0.2',
+    version='0.0.3',
     packages=['log_register'],
     include_package_data=True,
     license='BSD License',
