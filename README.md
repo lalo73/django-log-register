@@ -7,7 +7,7 @@ Log Register Documentation
 
 ::
 
-    pip install django-log-register==0.1.3
+    pip install django-log-register==0.0.3
 
 
 Django Log Register is a simple application for Django.
